@@ -32,20 +32,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Enterprise AI Support V21** - ATC Support with Mobile Responsive Design.
+**Enterprise AI Support V22** - ATC Support with PRD Phase 1 Complete.
 
-**Version**: 21.0.0
-**Port**: 3021
-**Status**: Production
-**Base**: Cloned from V20
+**Version**: 22.0.0
+**Port**: 3022
+**Status**: Development
+**Base**: Cloned from V21
 
 ### Production URLs
-- **Vercel**: https://atc-support-v21.vercel.app
-- **GitHub**: https://github.com/aldrinstellus/atc-support-v21
+- **Vercel**: TBD
+- **GitHub**: TBD
 
 ### Demo URLs
-- **Production Demo**: https://atc-support-v21.vercel.app/demo/c-level
-- **Local Demo**: http://localhost:3021/demo/c-level
+- **Local Demo**: http://localhost:3022/demo/c-level
 
 ## 📍 Latest Savepoint
 
@@ -54,9 +53,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Quick Restore
 ```bash
-cd /Users/admin/Documents/claudecode/workspaces/enterprise-ai-support/apps/atc-support-v21
-PORT=3021 npm run dev
-# Demo: http://localhost:3021/demo/c-level
+cd /Users/admin/Documents/claudecode/workspaces/enterprise-ai-support/apps/atc-support-v22
+npm run dev
+# Demo: http://localhost:3022/demo/c-level
 ```
 
 ### Key References
