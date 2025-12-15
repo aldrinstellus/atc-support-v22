@@ -31,10 +31,16 @@ function DemoLayoutContent({ children }: { children: React.ReactNode }) {
   const { clearAllConversations } = useConversation();
 
   // Collapsible sidebar state with localStorage persistence
+  // On mobile (< 768px), default to closed; on desktop, check localStorage
   const [sidebarOpen, setSidebarOpen] = useState(() => {
     if (typeof window !== 'undefined') {
+      // Mobile: default to closed
+      if (window.innerWidth < 768) {
+        return false;
+      }
+      // Desktop: check localStorage, default to open
       const saved = localStorage.getItem('sidebarOpen');
-      return saved !== null ? JSON.parse(saved) : true; // Default to open
+      return saved !== null ? JSON.parse(saved) : true;
     }
     return true;
   });

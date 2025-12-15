@@ -68,16 +68,27 @@ export function Sidebar({
   }, []);
 
   return (
-    <aside
-      className={`h-screen bg-card border-r border-border transition-all duration-300 ${
-        isOpen ? 'w-[300px]' : 'w-0'
-      }`}
-    >
+    <>
+      {/* Mobile overlay backdrop - only show on mobile when sidebar is open */}
       <div
-        className={`flex h-full flex-col ${
+        className={`fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${
           isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        } transition-opacity duration-200`}
+        }`}
+        onClick={_onToggle}
+      />
+
+      {/* Sidebar - Mobile: slide in from left as overlay, Desktop: inline with collapse */}
+      <aside
+        className={`h-screen bg-card border-r border-border transition-all duration-300 flex-shrink-0
+          fixed md:relative left-0 top-0 z-50 md:z-auto
+          ${isOpen ? 'translate-x-0 w-[300px]' : '-translate-x-full md:translate-x-0 md:w-0 w-[300px]'}
+        `}
       >
+        <div
+          className={`flex h-full flex-col w-[300px] ${
+            isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          } transition-opacity duration-200`}
+        >
       {/* CTIS Logo */}
       <CTISLogo />
 
@@ -302,5 +313,6 @@ export function Sidebar({
       </div>
       </div>
     </aside>
+    </>
   );
 }

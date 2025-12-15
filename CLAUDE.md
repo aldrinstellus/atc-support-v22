@@ -32,14 +32,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Enterprise AI Support V18** - Unified Multi-Mode System with ATC/Government/Project Personas. Comprehensive persona testing and deployment infrastructure.
+**Enterprise AI Support V21** - ATC Support with Mobile Responsive Design.
 
-**Version**: 18.0.0
-**Port**: 3019
-**Status**: Development - Unified Modes
-**Base**: Cloned from V17 (Mode Switcher with all features)
-**Production URL**: https://v18-unified-modes-fpbqd8c5f-aldos-projects-8cf34b67.vercel.app
-**GitHub**: https://github.com/aldrinstellus/enterprise-ai-support-v18
+**Version**: 21.0.0
+**Port**: 3021
+**Status**: Development
+**Base**: Cloned from V20
+
+## 📍 Latest Savepoint
+
+**Location**: `/savepoints/`
+**Current**: `SAVEPOINT-2025-12-15-1519-RESPONSIVE.md`
+
+### Quick Restore
+```bash
+cd /Users/admin/Documents/claudecode/workspaces/enterprise-ai-support/apps/atc-support-v21
+PORT=3021 npm run dev
+# Demo: http://localhost:3021/demo/c-level
+```
+
+### Key References
+- **Responsive Rules**: `docs/08-development/RESPONSIVE-DESIGN-RULES.md`
+- **All Savepoints**: `savepoints/` folder
 
 ## 📚 Documentation Structure
 
@@ -59,17 +73,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 📁 Folder Structure (SDLC-Compliant)
 
 ```
-atc-support-v20/
+atc-support-v21/
 ├── src/                    # Source code
 ├── docs/                   # SDLC documentation (15 categories)
 │   ├── 00-DOCUMENTATION-INDEX.md
 │   ├── 01-getting-started/ # Quick start, PRD
 │   ├── 02-architecture/
 │   ├── 03-api/
+│   ├── 08-development/     # RESPONSIVE-DESIGN-RULES.md
 │   ├── ...
 │   └── 15-reference/
+├── savepoints/             # 📍 SESSION SAVEPOINTS (timestamped)
+│   └── SAVEPOINT-YYYY-MM-DD-HHMM-*.md
 ├── archive/                # Session artifacts (NOT in git)
-│   ├── savepoints/         # All PROJECT-SAVEPOINT-*.md files
+│   ├── savepoints/         # Legacy savepoints
 │   ├── screenshots/        # Test screenshots
 │   ├── images/             # Misc images (CTIS logo, etc.)
 │   ├── demo-scripts/       # Demo presentation scripts
