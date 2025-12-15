@@ -79,108 +79,80 @@ function SignInForm() {
 
       {/* Sign In Card */}
       <div className="glass-card rounded-lg border border-border bg-card/70 p-6 backdrop-blur-md">
-        {/* Microsoft Entra ID Sign In - Primary SSO */}
-        <button
-          onClick={handleMicrosoftLogin}
-          disabled={isLoading}
-          className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg bg-[#0078D4] text-white font-medium hover:bg-[#106EBE] transition-colors disabled:opacity-50"
-        >
-          <Building2 className="h-5 w-5" />
-          <span>Continue with Microsoft</span>
-        </button>
-
-        {/* Google Sign In - Alternative */}
-        <button
-          onClick={handleGoogleLogin}
-          disabled={isLoading}
-          className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg border border-border bg-card hover:bg-muted transition-colors disabled:opacity-50 mt-3"
-        >
-          <Chrome className="h-5 w-5" />
-          <span className="font-medium">Continue with Google</span>
-        </button>
-
-        {/* Divider */}
-        <div className="relative my-6">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-border" />
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-card px-2 text-muted-foreground">Or continue with demo</span>
-          </div>
-        </div>
-
-        {/* Demo Login Form */}
-        <form onSubmit={handleDemoLogin} className="space-y-4">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-              Email
-            </label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="agent@demo.com"
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-muted border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                required
-              />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-foreground mb-1.5">
-              Password
-            </label>
-            <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="demo"
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-muted border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                required
-              />
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors disabled:opacity-50"
-          >
-            {isLoading ? 'Signing in...' : 'Sign In'}
-          </button>
-        </form>
-
-        {/* Demo Accounts */}
-        <div className="mt-6 pt-6 border-t border-border">
-          <p className="text-xs text-muted-foreground mb-3">Demo accounts (password: demo):</p>
+        {/* Quick Demo Access - Primary for testing */}
+        <div className="mb-6">
+          <p className="text-sm font-medium text-foreground mb-3 flex items-center gap-2">
+            <Sparkles className="h-4 w-4 text-primary" />
+            Quick Demo Access
+          </p>
           <div className="space-y-2">
             {demoAccounts.map((account) => (
               <button
                 key={account.email}
-                onClick={() => {
-                  setEmail(account.email);
-                  setPassword('demo');
+                onClick={async () => {
+                  setIsLoading(true);
+                  await signIn('demo-login', {
+                    email: account.email,
+                    password: 'demo',
+                    callbackUrl,
+                    redirect: true,
+                  });
                 }}
-                className="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-muted/50 hover:bg-muted text-sm transition-colors"
+                disabled={isLoading}
+                className="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/20 hover:border-primary/50 text-sm transition-all disabled:opacity-50"
               >
-                <span className="text-foreground">{account.email}</span>
-                <span className="text-xs text-muted-foreground">{account.role}</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                    <span className="text-xs font-bold text-primary">
+                      {account.role === 'Support Agent' ? 'SA' : account.role === 'CS Manager' ? 'CM' : 'AD'}
+                    </span>
+                  </div>
+                  <div className="text-left">
+                    <span className="text-foreground font-medium block">{account.role}</span>
+                    <span className="text-xs text-muted-foreground">{account.email}</span>
+                  </div>
+                </div>
+                <span className="text-xs text-primary font-medium">Sign In →</span>
               </button>
             ))}
           </div>
         </div>
+
+        {/* Enterprise SSO Section - Coming Soon */}
+        <div className="mt-6 pt-6 border-t border-border">
+          <p className="text-xs text-muted-foreground mb-3 flex items-center gap-2">
+            <Lock className="h-3 w-3" />
+            Enterprise SSO
+            <span className="text-[10px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground">Coming Soon</span>
+          </p>
+          <div className="space-y-2 opacity-50">
+            {/* Microsoft Entra ID - Disabled */}
+            <div
+              className="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-[#0078D4]/20 border border-[#0078D4]/30 cursor-not-allowed"
+              title="Microsoft Entra ID SSO - Coming Soon"
+            >
+              <div className="flex items-center gap-3">
+                <Building2 className="h-5 w-5 text-[#0078D4]" />
+                <span className="text-foreground/70">Continue with Microsoft</span>
+              </div>
+              <span className="text-[10px] text-muted-foreground">Configure in Azure AD</span>
+            </div>
+
+            {/* Google - Disabled */}
+            <div
+              className="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-card border border-border cursor-not-allowed"
+              title="Google OAuth - Coming Soon"
+            >
+              <div className="flex items-center gap-3">
+                <Chrome className="h-5 w-5 text-muted-foreground" />
+                <span className="text-foreground/70">Continue with Google</span>
+              </div>
+              <span className="text-[10px] text-muted-foreground">Configure in GCP</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Footer */}
-      <p className="text-center text-xs text-muted-foreground mt-6">
-        Protected by NextAuth.js with Microsoft Entra ID &amp; Google OAuth
-      </p>
     </div>
   );
 }
