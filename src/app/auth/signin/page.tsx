@@ -4,7 +4,6 @@ import { Suspense } from 'react';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
-import Image from 'next/image';
 import { Lock, Chrome, AlertCircle, Sparkles, Loader2, Building2 } from 'lucide-react';
 
 function SignInForm() {
@@ -55,24 +54,6 @@ function SignInForm() {
     <div className="w-full max-w-md">
       {/* Header */}
       <div className="text-center mb-8">
-        <div className="flex items-center justify-center mb-4">
-          <Image
-            src="/atc-logo-dark.png"
-            alt="ATC Logo"
-            width={114}
-            height={33}
-            className="dark:block hidden"
-            priority
-          />
-          <Image
-            src="/atc-logo-light.png"
-            alt="ATC Logo"
-            width={114}
-            height={33}
-            className="dark:hidden block"
-            priority
-          />
-        </div>
         <p className="text-muted-foreground">
           AI-Powered IT Support System
         </p>
@@ -176,24 +157,6 @@ function SignInLoading() {
   return (
     <div className="w-full max-w-md">
       <div className="text-center mb-8">
-        <div className="flex items-center justify-center mb-4">
-          <Image
-            src="/atc-logo-dark.png"
-            alt="ATC Logo"
-            width={114}
-            height={33}
-            className="dark:block hidden"
-            priority
-          />
-          <Image
-            src="/atc-logo-light.png"
-            alt="ATC Logo"
-            width={114}
-            height={33}
-            className="dark:hidden block"
-            priority
-          />
-        </div>
         <p className="text-muted-foreground">
           AI-Powered IT Support System
         </p>
