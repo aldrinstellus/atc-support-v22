@@ -57,7 +57,7 @@ function SignInForm() {
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
           <Image
-            src="/atc-logo-dark.svg"
+            src="/atc-logo-dark.png"
             alt="ATC Logo"
             width={80}
             height={40}
@@ -65,7 +65,7 @@ function SignInForm() {
             priority
           />
           <Image
-            src="/atc-logo-light.svg"
+            src="/atc-logo-light.png"
             alt="ATC Logo"
             width={80}
             height={40}
@@ -178,7 +178,7 @@ function SignInLoading() {
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
           <Image
-            src="/atc-logo-dark.svg"
+            src="/atc-logo-dark.png"
             alt="ATC Logo"
             width={80}
             height={40}
@@ -186,7 +186,7 @@ function SignInLoading() {
             priority
           />
           <Image
-            src="/atc-logo-light.svg"
+            src="/atc-logo-light.png"
             alt="ATC Logo"
             width={80}
             height={40}

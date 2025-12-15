@@ -73,7 +73,7 @@ export default function DashboardLayout({
             <Link href="/dashboard/drafts" className="flex items-center gap-3 group">
               <div className="relative">
                 <Image
-                  src="/atc-logo-dark.svg"
+                  src="/atc-logo-dark.png"
                   alt="ATC Logo"
                   width={80}
                   height={28}
@@ -81,7 +81,7 @@ export default function DashboardLayout({
                   priority
                 />
                 <Image
-                  src="/atc-logo-light.svg"
+                  src="/atc-logo-light.png"
                   alt="ATC Logo"
                   width={80}
                   height={28}
