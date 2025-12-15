@@ -36,8 +36,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Version**: 21.0.0
 **Port**: 3021
-**Status**: Development
+**Status**: Production
 **Base**: Cloned from V20
+
+### Production URLs
+- **Vercel**: https://atc-support-v21.vercel.app
+- **GitHub**: https://github.com/aldrinstellus/atc-support-v21
+
+### Demo URLs
+- **Production Demo**: https://atc-support-v21.vercel.app/demo/c-level
+- **Local Demo**: http://localhost:3021/demo/c-level
 
 ## 📍 Latest Savepoint
 
