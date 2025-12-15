@@ -4,7 +4,8 @@ import { Suspense } from 'react';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
-import { Mail, Lock, Chrome, AlertCircle, Sparkles, Loader2, Building2 } from 'lucide-react';
+import Image from 'next/image';
+import { Lock, Chrome, AlertCircle, Sparkles, Loader2, Building2 } from 'lucide-react';
 
 function SignInForm() {
   const searchParams = useSearchParams();
@@ -54,9 +55,23 @@ function SignInForm() {
     <div className="w-full max-w-md">
       {/* Header */}
       <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <Sparkles className="h-8 w-8 text-primary" />
-          <h1 className="text-2xl font-bold text-foreground">ITSS</h1>
+        <div className="flex items-center justify-center mb-4">
+          <Image
+            src="/atc-logo-dark.svg"
+            alt="ATC Logo"
+            width={120}
+            height={40}
+            className="dark:block hidden"
+            priority
+          />
+          <Image
+            src="/atc-logo-light.svg"
+            alt="ATC Logo"
+            width={120}
+            height={40}
+            className="dark:hidden block"
+            priority
+          />
         </div>
         <p className="text-muted-foreground">
           AI-Powered IT Support System
@@ -161,9 +176,23 @@ function SignInLoading() {
   return (
     <div className="w-full max-w-md">
       <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <Sparkles className="h-8 w-8 text-primary" />
-          <h1 className="text-2xl font-bold text-foreground">ITSS</h1>
+        <div className="flex items-center justify-center mb-4">
+          <Image
+            src="/atc-logo-dark.svg"
+            alt="ATC Logo"
+            width={120}
+            height={40}
+            className="dark:block hidden"
+            priority
+          />
+          <Image
+            src="/atc-logo-light.svg"
+            alt="ATC Logo"
+            width={120}
+            height={40}
+            className="dark:hidden block"
+            priority
+          />
         </div>
         <p className="text-muted-foreground">
           AI-Powered IT Support System

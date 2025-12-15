@@ -1,0 +1,5 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ATC Logo - Light mode (black text on light background) -->
+  <text x="0" y="32" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="36" font-weight="900" fill="black">atc</text>
+  <circle cx="95" cy="28" r="6" fill="#FF4757"/>
+</svg>

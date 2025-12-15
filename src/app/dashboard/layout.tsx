@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import {
   Inbox,
   FileText,
@@ -12,7 +13,6 @@ import {
   ChevronLeft,
   Menu,
   User,
-  Shield,
   Activity,
   MessageSquare,
   Sun,
@@ -72,13 +72,24 @@ export default function DashboardLayout({
           {!sidebarCollapsed && (
             <Link href="/dashboard/drafts" className="flex items-center gap-3 group">
               <div className="relative">
-                <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/25">
-                  <Shield className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <div className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-success border-2 border-card-elevated animate-pulse" />
+                <Image
+                  src="/atc-logo-dark.svg"
+                  alt="ATC Logo"
+                  width={80}
+                  height={28}
+                  className="dark:block hidden"
+                  priority
+                />
+                <Image
+                  src="/atc-logo-light.svg"
+                  alt="ATC Logo"
+                  width={80}
+                  height={28}
+                  className="dark:hidden block"
+                  priority
+                />
               </div>
               <div>
-                <span className="font-bold text-lg text-foreground tracking-tight">ITSS</span>
                 <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Command Center</p>
               </div>
             </Link>
