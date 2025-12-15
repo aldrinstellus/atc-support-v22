@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import Image from 'next/image';
 import {
   Inbox,
   FileText,
@@ -68,30 +67,12 @@ export default function DashboardLayout({
         }`}
       >
         {/* Logo Section */}
-        <div className={`h-16 flex items-center border-b border-border/50 ${sidebarCollapsed ? 'justify-center px-2' : 'justify-between px-4'}`}>
+        <div className={`h-16 flex items-center border-b border-border/50 ${sidebarCollapsed ? 'justify-center px-2' : 'justify-between px-6'}`}>
           {!sidebarCollapsed && (
-            <Link href="/dashboard/drafts" className="flex items-center gap-3 group">
-              <div className="relative">
-                <Image
-                  src="/atc-logo-dark.png"
-                  alt="ATC Logo"
-                  width={86}
-                  height={25}
-                  className="dark:block hidden"
-                  priority
-                />
-                <Image
-                  src="/atc-logo-light.png"
-                  alt="ATC Logo"
-                  width={86}
-                  height={25}
-                  className="dark:hidden block"
-                  priority
-                />
-              </div>
-              <div>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Command Center</p>
-              </div>
+            <Link href="/dashboard/drafts" className="flex items-center group pl-2">
+              <span className="text-3xl font-bold tracking-tight text-foreground">
+                ATC
+              </span>
             </Link>
           )}
           <button
