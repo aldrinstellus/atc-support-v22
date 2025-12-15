@@ -40,8 +40,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Base**: Cloned from V21
 
 ### Production URLs
-- **Vercel**: TBD
-- **GitHub**: TBD
+- **Vercel**: https://atc-support-v22.vercel.app
+- **GitHub**: https://github.com/aldrinstellus/atc-support-v22
 
 ### Demo URLs
 - **Local Demo**: http://localhost:3022/demo/c-level
