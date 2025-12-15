@@ -59,16 +59,16 @@ function SignInForm() {
           <Image
             src="/atc-logo-dark.png"
             alt="ATC Logo"
-            width={80}
-            height={40}
+            width={114}
+            height={33}
             className="dark:block hidden"
             priority
           />
           <Image
             src="/atc-logo-light.png"
             alt="ATC Logo"
-            width={80}
-            height={40}
+            width={114}
+            height={33}
             className="dark:hidden block"
             priority
           />
@@ -180,16 +180,16 @@ function SignInLoading() {
           <Image
             src="/atc-logo-dark.png"
             alt="ATC Logo"
-            width={80}
-            height={40}
+            width={114}
+            height={33}
             className="dark:block hidden"
             priority
           />
           <Image
             src="/atc-logo-light.png"
             alt="ATC Logo"
-            width={80}
-            height={40}
+            width={114}
+            height={33}
             className="dark:hidden block"
             priority
           />

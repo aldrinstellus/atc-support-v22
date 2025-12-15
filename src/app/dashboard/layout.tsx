@@ -75,16 +75,16 @@ export default function DashboardLayout({
                 <Image
                   src="/atc-logo-dark.png"
                   alt="ATC Logo"
-                  width={80}
-                  height={28}
+                  width={86}
+                  height={25}
                   className="dark:block hidden"
                   priority
                 />
                 <Image
                   src="/atc-logo-light.png"
                   alt="ATC Logo"
-                  width={80}
-                  height={28}
+                  width={86}
+                  height={25}
                   className="dark:hidden block"
                   priority
                 />
